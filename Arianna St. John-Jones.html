@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arianna St. John-Jones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,500&family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff6f9; --bg2:#ffe6ef; --panel:rgba(255,255,255,.88); --pink:#ffa6c9; --pink-soft:#ffd3e4;
+  --name:#e0558f; --brown:#6e3410; --gold:#8a6d3b; --tan:#b79f74; --ink:#4a2411; --line:#f5c6d9;
+  --on-brown:#ffe3ee;
+  --script:"Lobster Two","Brush Script MT",cursive;
+  --serif:"Bitter","Rockwell",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#2b1710; --bg2:#3a1f1c; --panel:rgba(58,33,27,.92); --pink-soft:#5a2d3d; --name:#ffa6c9;
+    --brown:#ffd3e4; --gold:#e3c58d; --tan:#c9b48c; --ink:#ffe9f1; --line:#6a3a48; --on-brown:#3a1f1c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#2b1710; --bg2:#3a1f1c; --panel:rgba(58,33,27,.92); --pink-soft:#5a2d3d; --name:#ffa6c9;
+  --brown:#ffd3e4; --gold:#e3c58d; --tan:#c9b48c; --ink:#ffe9f1; --line:#6a3a48; --on-brown:#3a1f1c;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:linear-gradient(var(--bg),var(--bg2));color:var(--ink);font:400 1.05rem/1.7 var(--serif);min-height:100vh}
+a{color:var(--brown)}
+svg{display:block}
+:focus-visible{outline:3px solid var(--brown);outline-offset:3px;border-radius:6px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+/* Hero: laid out like the business card */
+.hero{position:relative;background:linear-gradient(180deg,var(--pink-soft) 0%,var(--bg) 100%);padding:clamp(2rem,6vw,4rem) 0 8rem;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;pointer-events:none}
+.hero::before{width:22rem;height:22rem;background:var(--pink);top:-9rem;right:-6rem}
+.hero::after{width:16rem;height:16rem;background:var(--pink-soft);bottom:1rem;left:-5rem}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(14rem,26rem) 1px 1fr;gap:clamp(1.25rem,4vw,3rem);align-items:center}
+.art{width:100%;height:auto}
+.vline{align-self:stretch;background:var(--brown);opacity:.7;position:relative}
+.vline::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:11px;background:var(--bg);border:2px solid var(--brown);transform:translate(-50%,-50%) rotate(45deg)}
+h1{font:italic 700 clamp(2.7rem,7.5vw,4.8rem)/1.02 var(--script);color:var(--name);margin:0 0 .8rem;text-shadow:0 2px 0 rgba(255,255,255,.5)}
+.sub{margin:0 0 1.4rem;font-size:1.1rem;line-height:1.45}
+.sub em{display:block;color:var(--gold);font-weight:500}
+.sub span{color:var(--tan)}
+.contact{list-style:none;margin:0 0 1.25rem;padding:1.1rem 1.4rem;background:var(--pink);color:#6e3410;border-radius:22px;display:grid;gap:.55rem;font-weight:600;max-width:27rem;box-shadow:0 10px 24px -12px rgba(110,52,16,.45)}
+.contact li{display:flex;align-items:center;gap:.8rem;overflow-wrap:anywhere}
+.contact a{color:inherit;text-decoration:none}
+.contact a:hover{text-decoration:underline}
+.ico{width:1.5rem;height:1.5rem;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font-weight:600;padding:.7rem 1.3rem;border-radius:999px;border:2px solid #6e3410}
+.btn.ig{background:var(--pink);color:#6e3410}
+.btn.in{background:#6e3410;color:#ffd3e4}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+/* Soft wave that melts the hero into the page */
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:6rem;z-index:1}
+.wave path{fill:var(--bg)}
+
+/* Content sheet overlaps the hero */
+main{position:relative;z-index:2;margin-top:-5.5rem;padding-bottom:4rem}
+.sheet{background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:32px;padding:clamp(1.25rem,4vw,2.5rem);box-shadow:0 30px 60px -30px rgba(224,85,143,.45)}
+[role=tablist]{display:flex;gap:.3rem;background:var(--pink-soft);padding:.35rem;border-radius:999px;overflow-x:auto;margin-bottom:2rem;width:fit-content;max-width:100%}
+[role=tab]{font:600 1rem var(--serif);background:none;border:0;color:var(--brown);padding:.6rem 1.25rem;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+[role=tab]:hover{background:rgba(255,255,255,.5)}
+[role=tab][aria-selected=true]{background:var(--brown);color:var(--on-brown)}
+[role=tabpanel][hidden]{display:none}
+[role=tabpanel]{animation:rise .45s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){[role=tabpanel]{animation:none}.btn{transition:none}}
+h2{font:italic 700 clamp(2rem,5vw,2.8rem)/1.1 var(--script);color:var(--name);margin:0 0 1.25rem}
+.orn{display:flex;align-items:center;gap:.7rem;margin:0 0 1.75rem;color:var(--brown);opacity:.7}
+.orn::before,.orn::after{content:"";height:1px;background:currentColor;flex:1;max-width:8rem}
+.orn i{width:9px;height:9px;border:2px solid currentColor;transform:rotate(45deg)}
+
+.entry{display:grid;grid-template-columns:9.5rem 1fr;gap:.4rem 1.75rem;padding:1.3rem 0;border-top:1px dashed var(--line)}
+.entry:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--gold);font-style:italic;font-weight:500}
+.entry h3{font:600 1.15rem/1.3 var(--serif);margin:0;color:var(--brown)}
+.where{color:var(--gold);font-style:italic;margin:.1rem 0 .5rem}
+.entry p{margin:0;max-width:40rem}
+.badge{display:inline-block;background:var(--pink);color:#6e3410;border-radius:999px;font:600 .85rem var(--serif);padding:.05rem .7rem;margin-left:.4rem;vertical-align:middle}
+.note{background:var(--pink-soft);border-radius:16px;padding:.9rem 1.1rem;color:var(--brown);font-size:.95rem;margin:1.5rem 0 0}
+.passions{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.1rem}
+.passion{background:var(--pink-soft);border-radius:22px;padding:1.4rem}
+.passion h3{font:italic 700 1.7rem/1.1 var(--script);color:var(--name);margin:0 0 .4rem}
+.passion p{margin:0}
+
+footer{text-align:center;color:var(--gold);padding:0 1.25rem 2rem;font-style:italic}
+
+@media (max-width:48rem){
+  .hero .wrap{grid-template-columns:1fr}
+  .vline{height:1px;width:100%;align-self:auto}
+  .art{max-width:20rem;margin:0 auto}
+  .entry{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="art" id="art" viewBox="0 0 400 360" role="img" aria-label="Scales of justice in front of a cherry blossom tree">
+      <g id="canopy"></g>
+      <g stroke="#6e3410" stroke-linecap="round" fill="none" opacity=".85">
+        <path d="M185 150l-38-52M215 160l40-62M190 200l-62-22M212 205l66-30" stroke-width="5"/>
+        <path d="M147 98l-10-18M255 98l14-16" stroke-width="3"/>
+      </g>
+      <g fill="#6e3410">
+        <path d="M130 342h140q-34-6-44-42h-52q-10 36-44 42z"/>
+        <rect x="192" y="100" width="16" height="205" rx="6"/>
+        <circle cx="200" cy="92" r="9"/>
+        <path d="M52 262h100q-12 28-50 30-38-2-50-30zM248 262h100q-12 28-50 30-38-2-50-30z"/>
+      </g>
+      <g fill="none" stroke="#6e3410" stroke-linecap="round">
+        <path d="M96 150q54 26 104 0 50 26 104 0" stroke-width="8"/>
+        <circle cx="96" cy="146" r="10" stroke-width="5"/><circle cx="304" cy="146" r="10" stroke-width="5"/>
+        <path d="M100 158L62 262M100 158l42 104M300 158l-42 104M300 158l38 104" stroke-width="1.2"/>
+      </g>
+    </svg>
+    <div class="vline" aria-hidden="true"></div>
+    <div>
+      <h1>Arianna St. John-Jones</h1>
+      <p class="sub"><em>Purdue University Student</em><span>Political Science &amp; Communications</span></p>
+      <ul class="contact">
+        <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:+12602787868">260-278-7868</a></li>
+        <li><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 6l9 7 9-7"/></svg><a href="mailto:ariannasjj26@gmail.com">ariannasjj26@gmail.com</a></li>
+        <li><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg><a href="https://ariannasjj.com">ariannasjj.com</a></li>
+      </ul>
+      <div class="btns">
+        <!-- Replace with her real Instagram profile URL -->
+        <a class="btn ig" href="https://www.instagram.com/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg>Connect on Instagram</a>
+        <!-- Replace with her real LinkedIn profile URL -->
+        <a class="btn in" href="https://www.linkedin.com/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v6M8 7.5v.1M12 16v-6m0 3a3 3 0 0 1 6 0v3"/></svg>Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48c180 60 360 60 540 20S900 0 1140 20c130 11 230 30 300 28v48H0z"/></svg>
+</header>
+
+<main>
+<div class="wrap">
+<div class="sheet">
+
+  <div role="tablist" aria-label="Sections">
+    <button role="tab" id="t-pas" aria-controls="p-pas" aria-selected="true">Passions</button>
+    <button role="tab" id="t-up" aria-controls="p-up" aria-selected="false" tabindex="-1">Upcoming</button>
+    <button role="tab" id="t-edu" aria-controls="p-edu" aria-selected="false" tabindex="-1">Education</button>
+    <button role="tab" id="t-exp" aria-controls="p-exp" aria-selected="false" tabindex="-1">Experience</button>
+  </div>
+
+  <section role="tabpanel" id="p-pas" aria-labelledby="t-pas">
+    <h2>Passions</h2>
+    <div class="orn" aria-hidden="true"><i></i></div>
+    <div class="passions">
+      <div class="passion"><h3>Public service</h3><p>Write what drives you toward politics, in your own words.</p></div>
+      <div class="passion"><h3>Communication</h3><p>How you connect with people through speaking, writing, or listening.</p></div>
+      <div class="passion"><h3>Your cause</h3><p>An issue, community, or policy area you care about most.</p></div>
+    </div>
+  </section>
+
+  <section role="tabpanel" id="p-up" aria-labelledby="t-up" hidden>
+    <h2>Upcoming</h2>
+    <div class="orn" aria-hidden="true"><i></i></div>
+    <div class="entry">
+      <div class="when">Month, year</div>
+      <div>
+        <h3>Internship or program <span class="badge">Applying</span></h3>
+        <div class="where">Organization</div>
+        <p>What it is and why it matters for your path into politics.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Month, year</div>
+      <div>
+        <h3>Event, conference, or speaking engagement <span class="badge">Registered</span></h3>
+        <div class="where">Location or online</div>
+        <p>Add a link for visitors who want to attend or follow along.</p>
+      </div>
+    </div>
+  </section>
+
+  <section role="tabpanel" id="p-edu" aria-labelledby="t-edu" hidden>
+    <h2>Education</h2>
+    <div class="orn" aria-hidden="true"><i></i></div>
+    <div class="entry">
+      <div class="when">2025 to present</div>
+      <div>
+        <h3>Bachelor's degree, Political Science and Communication <span class="badge">In progress</span></h3>
+        <div class="where">Purdue University</div>
+        <p>Four-year dual major. Add expected graduation year, honors, relevant courses, and student organizations here.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Graduated May 2025</div>
+      <div>
+        <h3>Diploma</h3>
+        <div class="where">East Allen University</div>
+        <p>Add honors, clubs, leadership roles, or awards from this time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section role="tabpanel" id="p-exp" aria-labelledby="t-exp" hidden>
+    <h2>Experience</h2>
+    <div class="orn" aria-hidden="true"><i></i></div>
+    <div class="entry">
+      <div class="when">Dates</div>
+      <div>
+        <h3>Role title</h3>
+        <div class="where">Organization</div>
+        <p>Describe what you did and what changed because of it. Two sentences with a concrete result works best.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Dates</div>
+      <div>
+        <h3>Internship or volunteer role</h3>
+        <div class="where">Organization</div>
+        <p>Campaigns, student government, community work, and part-time jobs all belong here.</p>
+      </div>
+    </div>
+    <p class="note">These are placeholders. Copy any entry block in the page's code to add more roles.</p>
+  </section>
+
+</div>
+</div>
+</main>
+
+<footer>&copy; 2026 Arianna St. John-Jones</footer>
+
+<script>
+(function(){
+  // Cherry blossom canopy (seeded so it looks the same every load)
+  var g=document.getElementById('canopy'),s=7,cols=['#ffc2d8','#ffd3e4','#ffa6c9','#ffe6ef','#ffb3d0'];
+  function r(){s=(s*16807)%2147483647;return s/2147483647}
+  var h='';
+  for(var i=0;i<170;i++){
+    var a=r()*6.283,d=Math.sqrt(r());
+    var x=200+Math.cos(a)*d*150,y=165+Math.sin(a)*d*118;
+    h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(7+r()*11).toFixed(1)+'" fill="'+cols[Math.floor(r()*5)]+'" opacity="'+(.6+r()*.4).toFixed(2)+'"/>';
+  }
+  g.innerHTML=h;
+
+  // Tabs
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function show(tab,focus){
+    tabs.forEach(function(t){
+      var on=t===tab;
+      t.setAttribute('aria-selected',on);
+      t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+    });
+    if(focus)tab.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t)});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i+tabs.length-1)%tabs.length];
+      if(e.key==='Home')n=tabs[0];
+      if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();show(n,true)}
+    });
+  });
+})();
+</script>
+</body>
+</html>
